@@ -315,6 +315,13 @@ $drupal_hash_salt = '';
  * for you.
  */
 # $base_url = 'http://www.example.com';  // NO trailing slash!
+if (!empty($_SERVER['HTTPS'])) {
+ini_set('session.cookie_secure', 1);
+$base_url = 'https://prodfolio.cloudbees.com';
+}
+else {
+$base_url = 'http://prodfolio.cloudbees.com';
+}
 
 /**
  * PHP settings:
